@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>To-Do-List</title>
+        <link rel="stylesheet" href="todo.css">
+        <meta name="description" content="a simple to do list interface">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="box">
+       <div id="header" class="head"> <h1>my to do list</h1></div>
+        <div class="feild">
+            <input id="inputfeild" type="text"><button id="button">+</button>
+            <div id="container"></div>
+</div>
+</div>
+        <script >
+            let inputfeild=document.getElementById('inputfeild');
+            let button=document.getElementById('button');
+            button.addEventListener('click',function(){
+                let paragraph=document.createElement('p');
+                paragraph.innerText=inputfeild.value;
+                container.appendChild(paragraph);
+                inputfeild.value="";
+                paragraph.addEventListener('click',function(){
+                   paragraph.style.textDecoration="line-through" ;
+                })
+                paragraph.addEventListener('dblclck',function(){
+                    container.removeChild(paragraph);
+                })  
+            })
+        </script>
+    </body>
+</html>
